@@ -4,6 +4,8 @@ An application for modelling function blocks based on IEC 61499.
 
 ## Requirements:
  - Python3
+ - Gtk4
+ - Libadwaita
     
 ### Check if python is installed:
  1. ```
@@ -15,6 +17,26 @@ An application for modelling function blocks based on IEC 61499.
     sudo apt install python3
     ```
 
+### Check if Gtk is installed:
+ 1. ```
+    dpkg -s libgtk-4-dev | grep '^Version'
+    ```
+
+ 2. If it isn't installed, execute the following command:
+    ```
+    sudo apt install libgtk-4-dev
+    ```
+
+### Check if Libadwaita is installed:
+ 1. ```
+    dpkg -l | grep libadwaita
+    ```
+
+ 2. If it isn't installed, execute the following command:
+    ```
+    sudo apt install libadwaita-1-dev
+    ```
+
 ## To run FBE:
  1. Clone the FBE repository:
     ```
@@ -24,9 +46,9 @@ An application for modelling function blocks based on IEC 61499.
     ```
     cd /home/<root_username>/fbe3_2
     ```
- 4. Run the program:
+ 4. Run the program via sh script:
     ```
-    python3 main.py
+    ./run_fbe.sh
     ```
 
 ## How to use:
