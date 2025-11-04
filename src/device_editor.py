@@ -1,6 +1,7 @@
 import gi
 
 from gi.repository import Gio, Gdk, Gtk, Adw
+from base import PageMixin
 
 gi.require_version('Gtk', '4.0')
 

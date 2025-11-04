@@ -9,7 +9,7 @@ mkdir -p "$OUTPUT_DIR"
 # Compile the .gresource.xml file into a binary .gresource file
 glib-compile-resources \
     --sourcedir=src \
-    --target="$OUTPUT_DIR/resources.gresource" \
-    src/resources.gresource.xml
+    --target="$OUTPUT_DIR/fbe.gresource" \
+    src/fbe.gresource.xml
 
-echo "Resources compiled to $OUTPUT_DIR/resources.gresource"
+echo "Resources compiled to $OUTPUT_DIR/fbe.gresource"

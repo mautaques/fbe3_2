@@ -7,8 +7,9 @@
     <property name="default-height">800</property>
     <property name="title">Function Block Environment 3</property>
     <property name="content">
-      <object class="AdwToolbarView">
-        <child type="top">
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <child>
           <object class="AdwHeaderBar" id="header_bar">
             <child type="start">
               <object class="GtkMenuButton">
@@ -31,10 +32,10 @@
             </child>
           </object>
         </child>
-
-        <property name="content">
+        <child>
           <object class="GtkBox" id="vbox_window">
             <property name="orientation">vertical</property>
+            <property name="vexpand">true</property>
             <child>
               <object class="GtkBox" id="hbox_window">
                 <property name="orientation">horizontal</property>
@@ -173,7 +174,7 @@
               </object>
             </child>
           </object>
-        </property>
+        </child>
       </object>
     </property>
   </template>

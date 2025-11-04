@@ -1,6 +1,6 @@
 # main.py
 #
-# Copyright 2024 Cabral
+# Copyright 2025 Mauricio Martins Taques Filho
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,18 +24,21 @@ import os
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-
 from gi.repository import Gtk, Gio, Adw, Gdk
 
-#current_dir = os.path.dirname(os.path.abspath(__file__))
-#resource_path = os.path.join(current_dir, 'resources.gresource')
-#Gio.Resource.load(resource_path)._register()
+# Carregar recursos GResource (UI e ícones) ANTES de importar window
+resource_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fbe.gresource')
+if not os.path.exists(resource_path):
+    print(f"ERRO: Arquivo de recursos não encontrado: {resource_path}")
+    sys.exit(1)
 
-resource_path = os.path.join(os.path.dirname(__file__), 'fbe.gresource')
-Gio.Resource.load(resource_path)._register()
-
-resource_path = os.path.join(os.path.dirname(__file__), 'fbe.gresource')
-Gio.Resource.load(resource_path)._register()
+try:
+    resource = Gio.Resource.load(resource_path)
+    resource._register()
+    print(f"Recursos carregados com sucesso de: {resource_path}")
+except Exception as e:
+    print(f"ERRO ao carregar recursos: {e}")
+    sys.exit(1)
 
 from window import FbeWindow
 
@@ -70,6 +73,9 @@ class FbeApplication(Adw.Application):
 
     def do_startup(self):
         Gtk.Application.do_startup(self)
+
+        # Garantir que Adwaita está inicializado
+        Adw.init()
 
         # Adiciona o caminho do recurso ao tema de ícones
         # O caminho '/com/lapas/Fbe' é o prefixo definido no resources.gresource.xml

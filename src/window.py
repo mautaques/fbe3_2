@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2024 Cabral
+# Copyright 2025 Mauricio Martins Taques Filho
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
