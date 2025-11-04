@@ -17,7 +17,7 @@ An application for modelling function blocks based on IEC 61499.
     sudo apt install python3
     ```
 
-### Check if Gtk is installed:
+### Check if Gtk4 is installed:
  1. ```
     dpkg -s libgtk-4-dev | grep '^Version'
     ```
