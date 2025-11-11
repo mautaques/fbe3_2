@@ -26,7 +26,6 @@ gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw, Gdk
 
-# Carregar recursos GResource (UI e ícones) ANTES de importar window
 resource_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fbe.gresource')
 if not os.path.exists(resource_path):
     print(f"ERRO: Arquivo de recursos não encontrado: {resource_path}")
